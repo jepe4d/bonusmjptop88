@@ -224,6 +224,38 @@ transform:translateY(-8px);
 transform:translateY(0);
 }
 
+/* ==========================
+   BANNER
+========================== */
+
+.banner-container{
+
+    width:92%;
+    max-width:430px;
+
+    margin:20px auto;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 20px rgba(0,170,255,.35);
+
+}
+
+.banner-container amp-img{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    border-radius:18px;
+
+}
+
 }
 
 /* ===========================
