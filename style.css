@@ -1,7 +1,10 @@
 /* ===================================================
    MJPTOP88 PREMIUM LANDING PAGE
 =================================================== */
-
+.seo-title{
+position:absolute;
+left:-9999px;
+}
 *{
     margin:0;
     padding:0;
