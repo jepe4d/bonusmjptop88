@@ -93,18 +93,32 @@ content="37AACE7F420099F69B77859DEA41EADB">
 
     * { box-sizing: border-box; } 
 
-    body { 
-      font-family: 'Poppins', sans-serif; 
-      background-color: #050505; 
-      background-image: radial-gradient(circle at 50% 50%, #13000b 0%, #000000 100%); 
-      color: var(--text); 
-      margin: 0; 
-      padding: 0; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      min-height: 100vh; 
-    } 
+body{
+
+margin:0;
+padding:0;
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(
+rgba(0,0,0,.25),
+rgba(0,0,0,.55)
+),
+url("/background.webp");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
+}
 
     /* Container Mobile Wrapper */ 
 .mobile-wrapper{
