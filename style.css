@@ -1,6 +1,8 @@
-/* ===================================================
+/* =========================================================
    MJPTOP88 PREMIUM LANDING PAGE
-=================================================== */
+========================================================= */
+
+/* RESET */
 
 *{
     margin:0;
@@ -9,7 +11,9 @@
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
@@ -20,8 +24,8 @@ body{
 
     background:
     linear-gradient(
-    rgba(0,0,0,.35),
-    rgba(0,0,0,.70)
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.55)
     ),
     url("/background.png");
 
@@ -32,15 +36,16 @@ body{
 
     min-height:100vh;
 
+    overflow-x:hidden;
+
     display:flex;
     justify-content:center;
-    align-items:center;
-
-    overflow-x:hidden;
 
 }
 
-/* SEO */
+/* =========================================================
+   SEO TITLE
+========================================================= */
 
 .seo-title{
 
@@ -57,44 +62,101 @@ body{
 
 }
 
-/* ===============================
-   WRAPPER
-================================ */
+/* =========================================================
+   MOBILE WRAPPER
+========================================================= */
 
 .mobile-wrapper{
 
     width:100%;
+
     max-width:480px;
 
     min-height:100vh;
 
-    background:rgba(9,12,22,.72);
+    position:relative;
 
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
+    background:
+    rgba(8,14,28,.42);
 
-    border-left:1px solid rgba(255,255,255,.08);
-    border-right:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border-left:
+    1px solid rgba(255,255,255,.08);
+
+    border-right:
+    1px solid rgba(255,255,255,.08);
 
     box-shadow:
 
-   .mobile-wrapper{
+    0 0 40px rgba(0,0,0,.55),
 
-   background:rgba(8,12,25,.45);
+    0 0 60px rgba(0,80,255,.18);
 
-   backdrop-filter:blur(8px);
-
-}
-
-    position:relative;
+    overflow:hidden;
 
     padding-bottom:90px;
 
 }
 
-/* ===============================
+/* Glow */
+
+.mobile-wrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-180px;
+    top:-180px;
+
+    width:360px;
+    height:360px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(0,170,255,.18),
+
+    transparent 70%);
+
+    filter:blur(40px);
+
+}
+
+.mobile-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-200px;
+    bottom:-220px;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(255,200,0,.14),
+
+    transparent 70%);
+
+    filter:blur(55px);
+
+}
+
+/* =========================================================
    HEADER
-================================ */
+========================================================= */
 
 .header{
 
@@ -102,7 +164,9 @@ body{
 
     text-align:center;
 
-    padding:25px 0 10px;
+    padding-top:28px;
+
+    padding-bottom:10px;
 
 }
 
@@ -118,52 +182,94 @@ body{
 
 .logo-container amp-img{
 
-    filter:drop-shadow(0 0 15px rgba(255,215,0,.55));
+    filter:
+
+    drop-shadow(0 0 18px rgba(255,215,0,.55));
 
 }
-/* ===================================================
-   BANNER
-=================================================== */
+/* =========================================================
+   PREMIUM BANNER
+========================================================= */
 
 .banner-container{
 
     width:92%;
 
-    max-width:430px;
+    max-width:440px;
 
-    margin:18px auto 28px;
+    margin:22px auto 28px;
+
+    position:relative;
 
     border-radius:22px;
 
     overflow:hidden;
 
-    position:relative;
+    background:#07131f;
 
-    background:#081120;
-
-    border:2px solid rgba(0,180,255,.40);
+    border:2px solid rgba(0,180,255,.35);
 
     box-shadow:
 
-    0 0 18px rgba(0,170,255,.35),
+    0 0 15px rgba(0,180,255,.35),
 
-    0 0 45px rgba(0,110,255,.18);
+    0 0 40px rgba(0,120,255,.18),
 
-    transition:.35s;
+    inset 0 0 20px rgba(255,255,255,.03);
+
+    transition:.35s ease;
 
 }
+
+/* Glow Border */
+
+.banner-container::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:22px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(0,200,255,.65),
+
+    rgba(255,200,0,.35),
+
+    rgba(0,200,255,.65)
+
+    );
+
+    z-index:-1;
+
+    filter:blur(16px);
+
+    opacity:.65;
+
+}
+
+/* Hover */
 
 .banner-container:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 
     box-shadow:
 
-    0 0 25px rgba(0,200,255,.55),
+    0 0 25px rgba(0,200,255,.45),
 
-    0 0 60px rgba(0,120,255,.28);
+    0 0 60px rgba(0,120,255,.25);
 
 }
+
+/* Banner */
 
 .banner-container amp-img{
 
@@ -175,39 +281,150 @@ body{
 
     border-radius:20px;
 
+    transition:.35s;
+
 }
 
-/* Glow Banner */
+.banner-container:hover amp-img{
 
-.banner-container::before{
+    transform:scale(1.02);
+
+}
+
+/* Shine */
+
+.banner-container::after{
 
     content:"";
 
     position:absolute;
 
-    inset:0;
+    top:-120%;
 
-    border-radius:20px;
+    left:-40%;
 
-    pointer-events:none;
+    width:45%;
 
-    box-shadow:
+    height:300%;
 
-    inset 0 0 25px rgba(0,170,255,.15);
+    background:
+
+    linear-gradient(
+
+    rgba(255,255,255,0),
+
+    rgba(255,255,255,.18),
+
+    rgba(255,255,255,0)
+
+    );
+
+    transform:rotate(25deg);
+
+    animation:bannerShine 7s linear infinite;
 
 }
 
-/* ==========================================
-   ACTION BUTTONS
-========================================== */
+/* Animation */
+
+@keyframes bannerShine{
+
+0%{
+
+left:-70%;
+
+}
+
+100%{
+
+left:140%;
+
+}
+
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content{
+
+    width:100%;
+
+    padding:0 18px;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:rgba(0,170,255,.12);
+
+    border:1px solid rgba(0,170,255,.35);
+
+    color:#7fdfff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.title{
+
+    font-size:34px;
+
+    line-height:1.25;
+
+    font-weight:800;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+    text-shadow:
+
+    0 0 15px rgba(0,170,255,.30);
+
+}
+
+.desc{
+
+    text-align:center;
+
+    color:#d2d8e2;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+/* =========================================================
+   PREMIUM BUTTONS
+========================================================= */
 
 .action-buttons{
 
     width:92%;
 
-    max-width:430px;
+    max-width:440px;
 
-    margin:0 auto;
+    margin:25px auto;
 
     display:flex;
 
@@ -217,13 +434,11 @@ body{
 
 }
 
-/* BUTTON */
+/* BUTTON DASAR */
 
 .btn{
 
-    height:62px;
-
-    border-radius:60px;
+    position:relative;
 
     display:flex;
 
@@ -231,58 +446,75 @@ body{
 
     align-items:center;
 
+    width:100%;
+
+    height:64px;
+
+    border-radius:60px;
+
     text-decoration:none;
 
-    font-size:19px;
+    font-size:20px;
 
     font-weight:800;
 
     letter-spacing:.5px;
 
-    transition:.30s;
+    overflow:hidden;
+
+    transition:.35s ease;
 
 }
-/* ===================================================
-   PREMIUM BUTTONS
-=================================================== */
 
-/* LOGIN */
+/* =========================
+   LOGIN
+========================= */
 
 .btn-login{
 
+    color:#ffffff;
+
     background:
+
     linear-gradient(
     90deg,
     #00d4ff,
-    #008cff);
-
-    color:#ffffff;
-
-    border:2px solid rgba(255,255,255,.08);
+    #0077ff);
 
     box-shadow:
 
-    0 0 18px rgba(0,170,255,.45),
+    0 0 20px rgba(0,180,255,.45),
 
-    inset 0 1px 0 rgba(255,255,255,.25);
+    inset 0 1px 0 rgba(255,255,255,.15);
 
 }
 
-/* ======================================
+.btn-login:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 0 30px rgba(0,200,255,.65),
+
+    0 10px 25px rgba(0,0,0,.35);
+
+}
+
+/* =========================
    DAFTAR
-====================================== */
+========================= */
 
 .btn-daftar{
 
+    color:#111;
+
     background:
+
     linear-gradient(
     90deg,
-    #ffd54a,
+    #ffe36d,
     #ffb300);
-
-    color:#111111;
-
-    border:2px solid rgba(255,255,255,.18);
 
     box-shadow:
 
@@ -296,21 +528,55 @@ body{
 
     transform:translateY(-4px);
 
-    background:
-    linear-gradient(
-    90deg,
-    #ffe36e,
-    #ffc400);
-
     box-shadow:
 
-    0 0 30px rgba(255,210,0,.65),
+    0 0 30px rgba(255,210,0,.70),
 
-    0 12px 25px rgba(0,0,0,.35);
+    0 10px 25px rgba(0,0,0,.35);
 
 }
 
-/* ACTIVE */
+/* Ripple Glow */
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(255,255,255,.28),
+
+    transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+
+}
+
+.btn:hover::before{
+
+    left:150%;
+
+}
+
+/* Click */
 
 .btn:active{
 
@@ -318,57 +584,80 @@ body{
 
 }
 
-/* ICON */
+/* =========================================================
+   PULSE ANIMATION
+========================================================= */
 
-.btn i{
+@keyframes pulseBlue{
 
-    margin-right:10px;
+0%{
 
-    font-size:20px;
+box-shadow:
+
+0 0 10px rgba(0,180,255,.30);
 
 }
 
-/* =====================================
-   GLOW ANIMATION
-===================================== */
+50%{
 
-@keyframes pulseGlow{
+box-shadow:
 
-    0%{
+0 0 28px rgba(0,200,255,.60);
 
-        box-shadow:
-        0 0 10px rgba(0,170,255,.25);
+}
 
-    }
+100%{
 
-    50%{
+box-shadow:
 
-        box-shadow:
-        0 0 30px rgba(0,170,255,.55);
+0 0 10px rgba(0,180,255,.30);
 
-    }
-
-    100%{
-
-        box-shadow:
-        0 0 10px rgba(0,170,255,.25);
-
-    }
+}
 
 }
 
 .btn-login{
 
-    animation:pulseGlow 3s infinite;
+animation:pulseBlue 3s infinite;
 
 }
-/* ===================================================
-   FOOTER • BOTTOM NAV • RESPONSIVE
-=================================================== */
 
-/* ==========================
-   COPYRIGHT
-========================== */
+@keyframes pulseGold{
+
+0%{
+
+box-shadow:
+
+0 0 10px rgba(255,200,0,.25);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 28px rgba(255,220,0,.60);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 10px rgba(255,200,0,.25);
+
+}
+
+}
+
+.btn-daftar{
+
+animation:pulseGold 3.5s infinite;
+
+}
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .copyright{
 
@@ -376,11 +665,9 @@ body{
 
     text-align:center;
 
-    margin-top:35px;
+    padding:35px 20px 25px;
 
-    padding:25px 20px;
-
-    color:rgba(255,255,255,.65);
+    color:rgba(255,255,255,.60);
 
     font-size:12px;
 
@@ -388,9 +675,9 @@ body{
 
 }
 
-/* ==========================
-   BOTTOM NAV
-========================== */
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
 
 .bottom-nav{
 
@@ -398,9 +685,9 @@ body{
 
     left:50%;
 
-    transform:translateX(-50%);
-
     bottom:0;
+
+    transform:translateX(-50%);
 
     width:100%;
 
@@ -408,23 +695,27 @@ body{
 
     height:72px;
 
+    background:
+
+    rgba(8,14,26,.92);
+
+    backdrop-filter:blur(18px);
+
+    border-top:
+
+    1px solid rgba(0,170,255,.18);
+
     display:flex;
 
     justify-content:space-around;
 
     align-items:center;
 
-    background:rgba(8,15,28,.94);
-
-    backdrop-filter:blur(14px);
-
-    border-top:1px solid rgba(0,170,255,.25);
+    z-index:999;
 
     box-shadow:
 
-    0 -10px 25px rgba(0,0,0,.45);
-
-    z-index:999;
+    0 -8px 25px rgba(0,0,0,.45);
 
 }
 
@@ -436,11 +727,11 @@ body{
 
     flex-direction:column;
 
-    justify-content:center;
-
     align-items:center;
 
-    color:#8da5c4;
+    justify-content:center;
+
+    color:#8aa6d5;
 
     text-decoration:none;
 
@@ -448,49 +739,81 @@ body{
 
     font-weight:600;
 
-    transition:.30s;
+    transition:.3s;
 
 }
 
 .nav-item svg{
 
-    width:24px;
+    width:22px;
 
-    height:24px;
-
-    fill:#8da5c4;
+    height:22px;
 
     margin-bottom:5px;
 
-    transition:.30s;
+    fill:#8aa6d5;
+
+    transition:.3s;
 
 }
 
 .nav-item:hover{
 
-    color:#00c8ff;
+    color:#00d4ff;
 
 }
 
 .nav-item:hover svg{
 
-    fill:#00c8ff;
+    fill:#00d4ff;
 
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 
-    filter:drop-shadow(0 0 10px rgba(0,190,255,.65));
+    filter:
+
+    drop-shadow(0 0 8px rgba(0,180,255,.6));
 
 }
 
-/* ==========================
-   MOBILE
-========================== */
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00bfff;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#050b15;
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:480px){
 
+.mobile-wrapper{
+
+    max-width:100%;
+
+}
+
 .logo-container amp-img{
 
-    width:180px;
+    width:170px;
 
 }
 
@@ -528,18 +851,22 @@ body{
 
 }
 
-/* ==========================
+/* =========================================================
    DESKTOP
-========================== */
+========================================================= */
 
 @media(min-width:768px){
 
 .mobile-wrapper{
 
-    border-radius:26px;
+    border-radius:24px;
 
-    overflow:hidden;
+    margin:20px auto;
+
+}
 
 }
 
-}
+/* =========================================================
+   END CSS
+========================================================= */
