@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://bonusmjptop88.pages.dev/sitemap.xml
+Sitemap: https://mjptop88.site/sitemap.xml
